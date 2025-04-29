@@ -31,12 +31,17 @@ function setGame() {
         }
         board.push(row);
     }
+
+    resetGame();
 }
 
 function setPiece() {
     if (gameOver) {
         return;
     }
+
+    let turnText = document.getElementById("turnText");
+
 
     //get coords of that tile clicked
     let coords = this.id.split("-");
@@ -55,10 +60,15 @@ function setPiece() {
     if (currPlayer == playerRed) {
         tile.classList.add("red-piece");
         currPlayer = playerYellow;
+        turnText.innerText = "Yellow's turn";
+        turnText.style.color = "yellow";
+        
     }
     else {
         tile.classList.add("yellow-piece");
         currPlayer = playerRed;
+        turnText.innerText = "Red's turn";
+        turnText.style.color = "red";
     }
 
     r -= 1; //update the row height for that column
@@ -115,14 +125,30 @@ function checkWinner() {
             }
         }
     }
+
+
 }
 
 function setWinner(r, c) {
     let winner = document.getElementById("winner");
     if (board[r][c] == playerRed) {
-        winner.innerText = "Red Wins";             
+        winner.innerText = "Red Wins";
+        winner.style.color = "red";             
     } else {
         winner.innerText = "Yellow Wins";
+        winner.style.color = "yellow";
     }
     gameOver = true;
+    const resetTextDisplay = document.getElementById('resetText');
+    resetTextDisplay.innerText = "Click space to reset game";
+    resetGame();
+}
+
+
+function resetGame() {
+    document.addEventListener('keydown', function(event){
+        if (event.key === ' '|| event.code === 'Space'){
+            window.location.reload();
+        }
+    });
 }

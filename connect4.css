@@ -1,8 +1,21 @@
+#turnText
+{
+    color: red;
+    font-size: 300%;
+    
+
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0px;
     padding: 0px;
+    background: url("bgtestexport.png"), lightblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow:hidden;
 }
 
 
@@ -12,10 +25,14 @@ body {
     width: 630px;
     background-color: blue;
     border: 10px solid navy;
-    
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    background-color: darkblue;
+    mix-blend-mode: hard-light;
+    position: relative;
+    margin-top: 70px;
+    
 }
 
 /* each circle on the board*/
@@ -23,55 +40,36 @@ body {
     height: 70px;
     width: 70px;
     margin: 5px;
-
     /* Circle */
-    background: white;
     border-radius: 50%;
     border: 5px solid navy;
+    background-color: rgb(128, 128, 128);
 }
 
 /* instead of a red piece, change to the desired image*/
 .red-piece {
-    background: url("checkersimg.png"), red;
+    background: url("checkersimgred.png"), red;
     background-size: 70px;
      
 }
 
 .yellow-piece {
-    background: yellow;
+    background: url("checkersimgyellow.png"), yellow;
+    background-size: 70px;
 }
 
 
 * {   padding: 0;   margin: 0;}
 
-/* website borders */
-.container {
-    width: 100%; /* Or any desired width */
-    overflow: hidden; /* Ensures content doesn't overflow */
 
+#winner
+{
+   color: white;
+   font-size: 40px;
 }
 
-.rectangle {
-    width: 20%; /* Or any desired width */
-    height: 100vh; /* Or any desired height */
-    background-color: #212b38; /* Or any desired color */
 
-
-
-    float: left; /* Or right for the opposite side */
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.main-content {
-    width: 0%; /* Adjust based on rectangle width */
-    float: left;
-    padding: 30px; /* Add some space around the content */
-    /* Other styles for your main content */
+#resetText
+{
+    color: white;
 }
