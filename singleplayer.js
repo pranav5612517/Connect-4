@@ -104,6 +104,9 @@ function checkWinner() {
 
 function setWinner(r, c) {
     let winner = board[r][c] === playerRed ? "Red (AI)" : "Yellow (You)";
+
+
+    
     document.getElementById("winner").innerText = `${winner} Wins!`;
     gameOver = true;
     document.getElementById("resetText").innerText = "Click space to reset game";

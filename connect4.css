@@ -28,10 +28,9 @@ body {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    background-color: darkblue;
     mix-blend-mode: hard-light;
     position: relative;
-    margin-top: 70px;
+    margin-top: 85px;
     
 }
 
